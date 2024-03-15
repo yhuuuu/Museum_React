@@ -6,13 +6,15 @@ import CollectionsPage from './pages/CollectionsPage'
 import CollectionDetail from './pages/CollectionDetail'
 import ShopPage from './pages/ShopPage'
 import EventPage from './pages/EventPage'
+import Header from './components/Header'
 
 
 
 function App() {
   return (
     <>
-     <h6>hi</h6>
+      <Header />
+      <h6>hi</h6>
       <Routes>
         <Route path='*' element={<NotFound />} />
         <Route path='/' element={<HomePage />} />
