@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import ArtworkCard from "../components/ArtworkCard"
 import SideBar from "../components/SideBar"
 
-function CollectionPage() {
+function ArtworkPage() {
 
   //Collection state for storing all artworks
   const [collection, setCollection] = useState(null)
@@ -11,7 +11,7 @@ function CollectionPage() {
   const [imgUrl, setImageUrl] = useState(null)
 
   const url = `https://api.artic.edu/api/v1/artworks`
-  async function getAllCollection() {
+  async function getAllArtwork() {
     try {
       let res = await axios.get(url)
       const { data, info, config } = res.data;
@@ -33,7 +33,7 @@ function CollectionPage() {
 
   //`getAllCollection function only once when the component mounts.`
   useEffect(() => {
-    getAllCollection()
+    getAllArtwork()
   }, [])
 
   return (
@@ -55,4 +55,4 @@ function CollectionPage() {
   )
 }
 
-export default CollectionPage
+export default ArtworkPage

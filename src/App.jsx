@@ -2,8 +2,8 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
-import CollectionPage from './pages/CollectionPage'
-import CollectionDetail from './pages/CollectionDetail'
+import ArtworkPage from './pages/ArtworkPage'
+import ArtworkDetail from './pages/ArtworkDetail'
 import ShopPage from './pages/ShopPage'
 import EventPage from './pages/EventPage'
 import Header from './components/Header'
@@ -19,8 +19,8 @@ function App() {
       <Routes>
         <Route path='*' element={<NotFound />} />
         <Route path='/' element={<HomePage />} />
-        <Route path='/collection' element={<CollectionPage />} />
-        <Route path='/collection/:id' element={<CollectionDetail />} />
+        <Route path='/artworks' element={<ArtworkPage />} />
+        <Route path='/artworks/:id' element={<ArtworkDetail />} />
         <Route path='/shop' element={<ShopPage />} />
         <Route path='/events' element={<EventPage />} />
       </Routes>
