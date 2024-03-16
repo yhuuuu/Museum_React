@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import ArtworkCard from "../components/ArtworkCard"
+import SideBar from "../components/SideBar"
 
 function CollectionPage() {
 
@@ -14,16 +15,16 @@ function CollectionPage() {
     try {
       let res = await axios.get(url)
       const { data, info, config } = res.data;
-      console.log('data:', data)
-      console.log('info:', info)
-      console.log('config:', config)
+      // console.log('data:', data)
+      // console.log('info:', info)
+      // console.log('config:', config)
 
       //Set the collection state with api data
       setCollection(data)
 
       //Set the config state
       setImageUrl(config.iiif_url)
-      
+
 
     } catch (err) {
       console.error(err);
@@ -39,15 +40,15 @@ function CollectionPage() {
     <>
 
       {collection && (
-        <ul>
-          {collection.map((artwork, index) => (
-            <ArtworkCard key = {index} artwork = {artwork} imgUrl={imgUrl}/>
-            // <li key={index}>
-            //   <img src={`${config.iiif_url}/${artwork.image_id}/full/!100,100/0/default.jpg`} alt={artwork.title} />{/* Display the image */}
-            //   <div>{artwork.title}</div>
-            // </li>
-          ))}
-        </ul>
+
+        <div className="collection-container">
+          <SideBar />
+          <div className="artwork-container">
+            {collection.map((artwork, index) => (
+              <ArtworkCard key={index} artwork={artwork} imgUrl={imgUrl} />
+            ))}
+          </div>
+        </div>
       )}
     </>
 
