@@ -1,12 +1,13 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
+import ArtworkCard from "../components/ArtworkCard"
 
 function CollectionPage() {
 
   //Collection state for storing all artworks
   const [collection, setCollection] = useState(null)
   //Config state for storing the configuration object
-  const [config, setConfig] = useState(null)
+  const [imgUrl, setImageUrl] = useState(null)
 
   const url = `https://api.artic.edu/api/v1/artworks`
   async function getAllCollection() {
@@ -21,29 +22,30 @@ function CollectionPage() {
       setCollection(data)
 
       //Set the config state
-      setConfig(config)
+      setImageUrl(config.iiif_url)
+      
 
     } catch (err) {
       console.error(err);
     }
   }
 
+  //`getAllCollection function only once when the component mounts.`
   useEffect(() => {
     getAllCollection()
   }, [])
 
-
-
   return (
     <>
-      <div>CollectionPage</div>
+
       {collection && (
         <ul>
           {collection.map((artwork, index) => (
-            <li key={index}>
-              <div>{artwork.title}</div>
-              <img src={`${config.iiif_url}/${artwork.image_id}/full/!100,100/0/default.jpg`} alt={artwork.title} />{/* Display the image */}
-            </li>
+            <ArtworkCard key = {index} artwork = {artwork} imgUrl={imgUrl}/>
+            // <li key={index}>
+            //   <img src={`${config.iiif_url}/${artwork.image_id}/full/!100,100/0/default.jpg`} alt={artwork.title} />{/* Display the image */}
+            //   <div>{artwork.title}</div>
+            // </li>
           ))}
         </ul>
       )}
