@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import ArtworkInfoDetail from "../components/ArtworkInfoDetail"
 
 
 function ArtworkDetail() {
@@ -36,20 +37,24 @@ function ArtworkDetail() {
   return (
     <>
 
-      <div className="artwork-info">
+      <div className="artworkDetail-top-section">
         {/* Check if artwork and artworkImg are not null before accessing their properties */}
         {artwork && (
-          <div>
+          <div className="artwork-info">
             <h3>{artwork.title}</h3>
             <p>{artwork.artist_display}</p>
             <p>{artwork.date_display}</p>
           </div>
          )}
         {artworkImg && artwork && (
-          <div>
+          <div className="artwork-img">
             <img src={`${artworkImg.iiif_url}/${artwork.image_id}/full/600,/0/default.jpg`} alt={artwork.title} />
           </div>
         )}
+      </div>
+
+      <div className="artworkDetail-mid-section">
+          <ArtworkInfoDetail artwork={artwork}/>
       </div>
 
     </>
