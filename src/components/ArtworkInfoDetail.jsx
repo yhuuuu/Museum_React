@@ -6,16 +6,43 @@ function ArtworkInfoDetail({ artwork }) {
   return (
     <div>
       <h3>ArtWork Detail</h3>
-      <div>
-        <div>Artist: {artwork.artist_title}</div>
-        <div>Title: {artwork.title}</div>
-        <div>Place(Artist's nationality): {artwork.place_of_origin}</div>
-        <div>Date: {artwork.date_qualifier_title} {artwork.date_display} </div>
-        <div>Medium: {artwork.medium_display}</div>
-        <div>Dimensions: {artwork.dimensions}</div>
-        <div>Credit Line: {artwork.credit_line}</div>
-        <div>Reference Number: {artwork.main_reference_number}</div>
-      </div>
+      
+      <table>
+  <tbody>
+    <tr>
+      <td>Artist</td>
+      <td>{artwork.artist_title}</td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td>{artwork.title}</td>
+    </tr>
+    <tr>
+      <td>Place(Artist's nationality)</td>
+      <td>{artwork.place_of_origin}</td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>{artwork.date_qualifier_title} {artwork.date_display}</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>{artwork.medium_display}</td>
+    </tr>
+    <tr>
+      <td>Dimensions</td>
+      <td>{artwork.dimensions}</td>
+    </tr>
+    <tr>
+      <td>Credit Line</td>
+      <td>{artwork.credit_line}</td>
+    </tr>
+    <tr>
+      <td>Reference Number</td>
+      <td>{artwork.main_reference_number}</td>
+    </tr>
+  </tbody>
+</table>
     </div>
   )
 }

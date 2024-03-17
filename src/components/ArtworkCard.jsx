@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 
 function ArtworkCard({ artwork, imgUrl }) {
 
+
   return (
     <Link to={`/artworks/${artwork.id}`}>
       <div className='artwork-card'>

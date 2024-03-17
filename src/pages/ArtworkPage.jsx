@@ -4,6 +4,9 @@ import ArtworkCard from "../components/ArtworkCard"
 import SideBar from "../components/SideBar"
 import Pagination from "../components/Pagination"
 
+
+
+
 function ArtworkPage() {
 
   //Collection state for storing all artworks
@@ -17,6 +20,8 @@ function ArtworkPage() {
   const [totalPage, setTotalPage] = useState(1)
 
   const [nextPageUrl, setNextPageUrl] = useState(null)
+
+
 
   const url = `https://api.artic.edu/api/v1/artworks`
   async function getAllArtwork(page) {
@@ -42,10 +47,12 @@ function ArtworkPage() {
   }
   function handleNextPage() {
     if (nextPageUrl) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
       setCurrentPage(page => page + 1)
     }
   }
   function handlePreviousPage() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setCurrentPage(page => page - 1)
   }
   useEffect(() => {
@@ -58,6 +65,7 @@ function ArtworkPage() {
 
       {collection && (
         <div>
+          
           <div className="collection-container">
             <SideBar />
             <div className="artwork-container">

@@ -83,3 +83,10 @@
   display: flex;
   flex-direction: column;
 }
+.pagination{
+padding-top: 20px;
+text-align: center;
+}
+.pagination button{
+  margin: 0 10px;
+}

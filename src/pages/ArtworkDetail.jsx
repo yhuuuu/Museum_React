@@ -43,6 +43,8 @@ function ArtworkDetail() {
             <h3>{artwork.title}</h3>
             <p>{artwork.artist_display}</p>
             <p>{artwork.date_display}</p>
+            <div dangerouslySetInnerHTML={{ __html: artwork.description }} />
+
           </div>
          )}
         {artworkImg && artwork && (
