@@ -24,7 +24,7 @@ function ArtworkPage() {
 
 
   const url = `https://api.artic.edu/api/v1/artworks`
-  async function getAllArtwork(page) {
+  async function getAllArtwork() {
     try {
       let res = await axios.get(`${url}?page=${currentPage}`)
       console.log(res);
@@ -55,7 +55,7 @@ function ArtworkPage() {
   
   }
   useEffect(() => {
-    getAllArtwork(currentPage)
+    getAllArtwork()
   }, [currentPage])
 
 
