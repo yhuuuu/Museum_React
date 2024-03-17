@@ -45,7 +45,7 @@
 
 .sidebar-container {
   width: 25%;
-  background-color: lightblue;
+  background-color: rgb(249, 250, 250);
   border-right: 1px solid #ccc;
 }
 
@@ -89,4 +89,46 @@ text-align: center;
 }
 .pagination button{
   margin: 0 10px;
+}
+
+/* eventCard.css */
+.event-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.event-card img {
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.event-card h4 {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.event-card p {
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+.event-card button {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.event-card button:hover {
+  background-color: #0056b3;
+}
+.header img{
+  width:100px;
+  height:auto;
 }
