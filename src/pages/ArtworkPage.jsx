@@ -33,7 +33,9 @@ function ArtworkPage() {
     
       setCollection(data)
       setImageUrl(config.iiif_url)
+
       setTotalPage(pagination.total_pages)
+
       setNextPageUrl(pagination.next_url)
 
     } catch (err) {

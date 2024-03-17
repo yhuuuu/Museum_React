@@ -8,7 +8,7 @@ import ShopPage from './pages/ShopPage'
 import EventPage from './pages/EventPage'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import ArtworkSearch from './pages/ArtworkSearch'
+
 
 
 
@@ -22,8 +22,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/artworks' element={<ArtworkPage />} />
         <Route path='/artworks/:id' element={<ArtworkDetail />} />
-        <Route path= 'artworks/search' element={<ArtworkSearch />} />
-        
+      
         <Route path='/shop' element={<ShopPage />} />
         <Route path='/events' element={<EventPage />} />
       </Routes>

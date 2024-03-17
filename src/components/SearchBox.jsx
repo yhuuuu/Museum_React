@@ -1,46 +1,44 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function SearchBox() {
-    const [query, setQuery] = useState("");
-    const [results, setResults] = useState([]);
+function SearchBar() {
+  const [query, setQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
-    const handleSearch = async () => {
-        try {
-            const response = await axios.get(
-                `https://api.artic.edu/api/v1/artworks/search?q=${query}`
-            );
-            setResults(response.data.data);
-        } catch (error) {
-            console.error("Error fetching search results:", error);
-        }
-    };
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(`https://api.artic.edu/api/v1/artworks/search?q=${query}`);
+      setSearchResults(response.data.data);
+      
+    } catch (error) {
+      console.error('Error fetching search results:', error);
+    }
+  };
 
-    const handleChange = (event) => {
-        setQuery(event.target.value);
-    };
+  const handleArtworkClick = (artworkId) => {
+    navigate(`/artworks/${artworkId}`); // Navigate to artwork detail page
+  };
 
-    return (
-        <div>
-            <input
-                type="text"
-                placeholder="Search for artworks..."
-                value={query}
-                onChange={handleChange}
-            />
-            {/* <Link to={`/artworks/search/${query}`}>    </Link> */}
-                <button onClick={handleSearch}>Search</button>
-        
-            {/* <div>
-        {results.map((artwork) => (
-          <div key={artwork.id}>
-            <h2>{artwork.title}</h2>
-            <img src={artwork.thumbnail.url} alt={artwork.title} />
-          </div>
+  return (
+    <div>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search for artwork..."
+      />
+      <button onClick={handleSearch}>Search</button>
+      <ul>
+        {searchResults.map((artwork) => (
+          <li key={artwork.id} onClick={() => handleArtworkClick(artwork.id)}>
+            {artwork.title}
+          </li>
         ))}
-      </div> */}
-        </div>
-    );
+      </ul>
+    </div>
+  );
 }
 
-export default SearchBox;
+export default SearchBar;
