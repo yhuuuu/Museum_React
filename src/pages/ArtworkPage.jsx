@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import ArtworkCard from "../components/ArtworkCard"
 import SideBar from "../components/SideBar"
+import Pagination from "../components/Pagination"
 
 function ArtworkPage() {
 
@@ -41,11 +42,11 @@ function ArtworkPage() {
   }
   function handleNextPage() {
     if (nextPageUrl) {
-      setCurrentPage(prevPage => prevPage + 1)
+      setCurrentPage(page => page + 1)
     }
   }
   function handlePreviousPage() {
-    setCurrentPage(nextPage => nextPage - 1)
+    setCurrentPage(page => page - 1)
   }
   useEffect(() => {
     getAllArtwork(currentPage)
@@ -64,15 +65,13 @@ function ArtworkPage() {
                 <ArtworkCard key={index} artwork={artwork} imgUrl={imgUrl} />
               ))}
             </div>
-
           </div>
-
-
-          <div className="pagination">
-            <p> Page {currentPage} of {totalPage}</p>
-            <button onClick={handlePreviousPage} disabled={currentPage === 1}> Pervious Page </button>
-            <button onClick={handleNextPage} disabled={!nextPageUrl} >Next Page </button>
-          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPage={totalPage}
+            nextPageUrl={nextPageUrl}
+            handleNextPage={handleNextPage}
+            handlePreviousPage={handlePreviousPage} />
         </div>
 
 
