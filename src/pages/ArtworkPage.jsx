@@ -14,11 +14,8 @@ function ArtworkPage() {
   async function getAllArtwork() {
     try {
       let res = await axios.get(url)
-      const { data, info, config } = res.data;
-      // console.log('data:', data)
-      // console.log('info:', info)
-      // console.log('config:', config)
-
+      const { data, config } = res.data;
+      
       //Set the collection state with api data
       setCollection(data)
 

@@ -22,11 +22,25 @@
   display: flex;
   list-style-type: none;
   flex-wrap: wrap;
-  padding: 0px 58px;
+  padding: 0 58px; 
 }
 
 .artwork-card {
   width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+  border: 1px solid #e4e2e2;
+}
+
+.artwork-card img {
+  width: auto;
+  height: 200px; 
+  max-width: 100%; 
+  object-fit: contain; 
 }
 
 .sidebar-container {
