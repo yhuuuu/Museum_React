@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import ArtworkCard from "../components/ArtworkCard"
 import SideBar from "../components/SideBar"
 import Pagination from "../components/Pagination"
-
+import SearchBox from "../components/SearchBox"
 
 
 
@@ -13,13 +13,13 @@ function ArtworkPage() {
   const [collection, setCollection] = useState(null)
   //img url state for storing the configuration object
   const [imgUrl, setImageUrl] = useState(null)
-
   //current page object
   const [currentPage, setCurrentPage] = useState(1)
   //total page object
   const [totalPage, setTotalPage] = useState(1)
-
   const [nextPageUrl, setNextPageUrl] = useState(null)
+
+  
 
 
 
@@ -30,15 +30,10 @@ function ArtworkPage() {
       console.log(res);
 
       const { pagination, data, config } = res.data;
-      //Set the collection state with api data
+    
       setCollection(data)
-
-      //Set the config state
       setImageUrl(config.iiif_url)
-
-      //set the pagination state
       setTotalPage(pagination.total_pages)
-
       setNextPageUrl(pagination.next_url)
 
     } catch (err) {
@@ -49,11 +44,13 @@ function ArtworkPage() {
     if (nextPageUrl) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       setCurrentPage(page => page + 1)
+   
     }
   }
   function handlePreviousPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
     setCurrentPage(page => page - 1)
+  
   }
   useEffect(() => {
     getAllArtwork(currentPage)
@@ -65,7 +62,7 @@ function ArtworkPage() {
 
       {collection && (
         <div>
-          
+          <SearchBox/>
           <div className="collection-container">
             <SideBar />
             <div className="artwork-container">
