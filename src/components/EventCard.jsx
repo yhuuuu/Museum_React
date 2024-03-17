@@ -1,13 +1,10 @@
-import { useNavigate } from "react-router-dom";
 
 
 
 function EventCard({ event }) {
-    const navigate = useNavigate();
     console.log('event', event);
     function handleButtonClick() {
-        const url = event.rsvp_link.startsWith("http") ? event.rsvp_link : `https://your-base-url/${event.rsvp_link}`;
-        navigate(url);
+        window.location.href = event.rsvp_link; navigate(event.image_url);
 
     }
 
