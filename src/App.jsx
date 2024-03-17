@@ -24,7 +24,10 @@ function App() {
         <Route path='/shop' element={<ShopPage />} />
         <Route path='/events' element={<EventPage />} />
       </Routes>
+      <div>
       <Footer/>
+      </div>
+      
     </>
   )
 }

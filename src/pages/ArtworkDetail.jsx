@@ -35,8 +35,7 @@ function ArtworkDetail() {
   console.log(artworkImg);
 
   return (
-    <>
-
+    <div className="artwork-detail">
       <div className="artworkDetail-top-section">
         {/* Check if artwork and artworkImg are not null before accessing their properties */}
         {artwork && (
@@ -57,7 +56,7 @@ function ArtworkDetail() {
           <ArtworkInfoDetail artwork={artwork}/>
       </div>
 
-    </>
+    </div>
 
   )
 }
