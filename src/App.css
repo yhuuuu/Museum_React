@@ -146,8 +146,7 @@
 
 .event-card button {
   margin-top: 10px;
-
-  color: #fff;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
@@ -170,7 +169,12 @@
 .carousel-container {
   display: flex;
 }
-
+.carousel-button{
+  background-color: #f9f9f966;
+}
+.carousel-button :hover{
+  background-color: #f9f9f966;
+}
 .carousel-button img {
   width: 10px;
   /* Adjust the size of the image as needed */

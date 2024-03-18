@@ -7,6 +7,7 @@ import back from '../images/back.png'
 import next from '../images/next.png'
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 function Carousel() {
 
     const images = [img1, img2, img3, img4, img5]
@@ -40,10 +41,11 @@ function Carousel() {
             <button onClick={handlePrevious} className="carousel-button">
                 <img src={back} alt="" />
             </button>
+            <Link to={`/artworks/`}>
+                <img src={images[index]} alt={`Image ${index + 1}`} style={{ width: "800px", height: '400px' }} />
+            </Link>
 
-            <img src={images[index]} alt={`Image ${index + 1}`} style={{ width: "800px", height: '400px' }} />
-
-            <button onClick={handleNext}className="carousel-button">
+            <button onClick={handleNext} className="carousel-button">
                 <img src={next} alt="" />
             </button>
 
