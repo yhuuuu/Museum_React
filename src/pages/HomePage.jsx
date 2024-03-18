@@ -3,7 +3,7 @@ import Carousel from "../components/Carousel";
 function HomePage() {
 
   return <>
-    <h1>Welcome ! </h1>
+    <h4>Welcome ! </h4>
   <Carousel/>
    
   </>

@@ -50,7 +50,7 @@ function Footer() {
           </div>
 
           <div id='child-box'>
-            <h5>Follow us....</h5>
+            <h5>Follow us</h5>
             <p>Facebook</p>
             <p>Twitter</p>
             <p>Instagram</p>
