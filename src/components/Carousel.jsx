@@ -3,13 +3,17 @@ import img2 from '../images/img2.jpeg'
 import img3 from '../images/img3.jpeg'
 import img4 from '../images/img4.jpeg'
 import img5 from '../images/img5.jpeg'
+import back from '../images/back.png'
+import next from '../images/next.png'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 function Carousel() {
 
     const images = [img1, img2, img3, img4, img5]
 
     const [index, setIndex] = useState(0);
+    const delay = 5000 //Delay between slides in milliseconds 
+    let intervalId;
 
     const handlePrevious = () => {
         const newIndex = index - 1;
@@ -20,11 +24,28 @@ function Carousel() {
         const newIndex = index + 1;
         setIndex(newIndex >= images.length ? 0 : newIndex);
     };
+
+    useEffect(() => {
+        // Start autoplay when the component mounts
+        intervalId = setInterval(handleNext, delay);
+
+        // Clear the interval when the component unmounts
+        return () => clearInterval(intervalId);
+    }, [index, delay]); // Include index and delay in the dependency array
+
+
     return (
-        <div className="carousel">
-            <button onClick={handlePrevious}>Previous</button>
-            <img src={images[index]} alt={`Image ${index + 1}`} />
-            <button onClick={handleNext}>Next</button>
+        <div className="carousel-container">
+
+            <button onClick={handlePrevious} className="carousel-button">
+                <img src={back} alt="" />
+            </button>
+
+            <img src={images[index]} alt={`Image ${index + 1}`} style={{ width: "800px", height: "400px" }} />
+
+            <button onClick={handleNext}className="carousel-button">
+                <img src={next} alt="" />
+            </button>
 
         </div>
     )

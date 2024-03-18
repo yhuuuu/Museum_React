@@ -154,3 +154,13 @@ text-align: center;
 .header ul li{
 padding:  30px;
 }
+
+
+.carousel-container{
+  display: flex;
+}
+
+.carousel-button img {
+  width: 10px; /* Adjust the size of the image as needed */
+  height: auto;
+}
