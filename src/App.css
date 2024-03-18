@@ -73,8 +73,9 @@
 .footer{
   width: 100%;
   display: flex;
-  font-size: 12px;
-  line-height:0;
+  font-size: 15px;
+  line-height: 0.5;
+ 
   padding-top: 100px;
 }
 
@@ -83,6 +84,22 @@
   display: flex;
   flex-direction: column;
 }
+.footer-right-box1,.footer-right-box2{
+  display: inline-flex;
+}
+#child-box{
+  width: 200px;
+  padding: 0 50px
+}
+
+
+.footer-left-box1{
+  height: 50%;
+}
+.footer-left-box2{
+  height: 50%;
+}
+
 .pagination{
 padding-top: 20px;
 text-align: center;
@@ -132,3 +149,5 @@ text-align: center;
   width:100px;
   height:auto;
 }
+
+
