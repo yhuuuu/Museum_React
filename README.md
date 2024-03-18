@@ -8,6 +8,7 @@ Art Museum Project is a web application that allows users to search for artworks
   - [Technologies](#technologies-used)
   - [Installation](#installation)
   - [Dependencies](#dependencies)
+  - [Screenshots](#screenshots)
 
 
 ## Introduction
