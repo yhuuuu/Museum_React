@@ -9,7 +9,8 @@ function ArtworkCard({ artwork, imgUrl }) {
         <div>
           <img src={`${imgUrl}/${artwork.image_id}/full/200,/0/default.jpg`} alt={artwork.title} />{/* Display the image */}
         </div>
-        <h6>{artwork.title}</h6>
+        <p>{artwork.title}</p>
+        <p>{artwork.artist_title}</p>
       </div>
     </Link>
   )

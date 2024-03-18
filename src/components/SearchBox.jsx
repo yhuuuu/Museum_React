@@ -30,7 +30,7 @@ function SearchBar() {
         placeholder="Search for artwork..."
       />
       <button onClick={handleSearch}>Search</button>
-      <ul>
+      <ul className='search-result'>
         {searchResults.map((artwork) => (
           <li key={artwork.id} onClick={() => handleArtworkClick(artwork.id)}>
             {artwork.title}
