@@ -22,7 +22,7 @@
   display: flex;
   list-style-type: none;
   flex-wrap: wrap;
-  padding: 0 58px; 
+  padding: 0 58px;
 }
 
 .artwork-card {
@@ -30,17 +30,17 @@
   height: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   text-align: center;
   border: 1px solid #e4e2e2;
 }
 
 .artwork-card img {
   width: auto;
-  height: 200px; 
-  max-width: 100%; 
-  object-fit: contain; 
+  height: 200px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .sidebar-container {
@@ -70,41 +70,46 @@
   max-height: 100%;
 }
 
-.footer{
+.footer {
   width: 100%;
   display: flex;
   font-size: 15px;
   line-height: 0.5;
- 
   padding-top: 100px;
 }
 
-.footer-left, .footer-right{
+.footer-left,
+.footer-right {
   width: 50%;
   display: flex;
   flex-direction: column;
 }
-.footer-right-box1,.footer-right-box2{
+
+.footer-right-box1,
+.footer-right-box2 {
   display: inline-flex;
 }
-#child-box{
+
+#child-box {
   width: 200px;
-  padding: 0 50px
+  padding: 0 20px
 }
 
 
-.footer-left-box1{
-  height: 50%;
-}
-.footer-left-box2{
+.footer-left-box1 {
   height: 50%;
 }
 
-.pagination{
-padding-top: 20px;
-text-align: center;
+.footer-left-box2 {
+  height: 50%;
 }
-.pagination button{
+
+.pagination {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
   margin: 0 10px;
 }
 
@@ -134,7 +139,7 @@ text-align: center;
 
 .event-card button {
   margin-top: 10px;
-  background-color: #007bff;
+
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -142,25 +147,39 @@ text-align: center;
   cursor: pointer;
 }
 
-.event-card button:hover {
-  background-color: #0056b3;
-}
-.header img{
-  width:100px;
-  height:auto;
-}
 
 
-.header ul li{
-padding:  30px;
+.header img {
+  width: 100px;
+  height: auto;
 }
 
 
-.carousel-container{
+.header ul li {
+  padding: 30px;
+}
+
+
+.carousel-container {
   display: flex;
 }
 
 .carousel-button img {
-  width: 10px; /* Adjust the size of the image as needed */
+  width: 10px;
+  /* Adjust the size of the image as needed */
   height: auto;
+}
+
+.search-bar {
+  text-align: center;
+}
+
+.search-bar input {
+  margin-right: 20px;
+  width: 30%;
+}
+
+.search-bar button{
+font-size: small;
+
 }

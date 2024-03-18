@@ -41,7 +41,7 @@ function Carousel() {
                 <img src={back} alt="" />
             </button>
 
-            <img src={images[index]} alt={`Image ${index + 1}`} style={{ width: "800px", height: "400px" }} />
+            <img src={images[index]} alt={`Image ${index + 1}`} style={{ width: "800px", height: '400px' }} />
 
             <button onClick={handleNext}className="carousel-button">
                 <img src={next} alt="" />

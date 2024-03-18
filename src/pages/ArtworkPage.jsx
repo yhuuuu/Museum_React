@@ -64,7 +64,9 @@ function ArtworkPage() {
 
       {collection && (
         <div>
+          <div className="search-bar">
           <SearchBox/>
+          </div>
           <div className="collection-container">
             <SideBar />
             <div className="artwork-container">
